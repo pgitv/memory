@@ -1,0 +1,241 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+		background: #ffffff
+		font-family: "Roboto Slab", "Helvetica Neue", Trebuchet, Helvetica, Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    /*font-family: 'Open Sans', sans-serif;*/
+		font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+		color: #F86161;
+		background: #ffffff;
+}
+
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+		background: linear-gradient(160deg, #02ccba 0%, 100%);
+    padding: 32px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+		background: #F86161;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+	animation: flash-light-gry 0.3s;
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+		background: #000000;
+    cursor: default;
+		animation: flash-grn 0.3s;
+}
+
+.deck .card.show {
+    font-size: 66px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #ffffff;
+		font-size: 66px;
+		color: #000000;
+		animation: flash-pnk 0.5s;
+}
+
+
+.score-panel {
+	text-align: center;
+	width: 660px;
+	padding-left: 32px;
+	padding-right: 32px;
+	margin-bottom: 10px;
+	font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.score-panel .stars {
+	float: left;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+    color: black;
+}
+
+.score-panel .restart {
+    float: right;
+		display: inline-block;
+    cursor: pointer;
+		font-size: 22px;
+		color: black;
+		fill: currentColor;
+
+}
+
+.timer {
+    display: none;
+    float: center;
+    padding-left: 10px;
+
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, lightblue, white);
+}
+
+.modalContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    font-size: 20px;
+    border-radius: 25px;
+}
+
+.playAgain {
+    background-color: red;
+    border: none;
+    color: linear-gradient(to right, lightblue, white);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 800px) {
+    .deck {
+        width: 400px;
+        min-height: 400px;
+        padding: 22px;
+    }
+
+    .deck .card {
+        height: 75px;
+        width: 75px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .deck {
+        width: 250px;
+        min-height: 250px;
+        padding: 15px;
+    }
+
+    .deck .card {
+        height: 50px;
+        width: 50px;
+    }
+
+    .score-panel {
+        text-align: left;
+        width: 150px;
+        margin-bottom: 10px;
+    }
+}
+
+
+@keyframes flash-light-gry {
+    0% {
+        background-color: #e36153;
+        transform: matrix(-0.866, -0.5, 0.5, 0.866, 0, 0);
+    }
+    100% {
+        background: #e36153;
+        transform: translate(0,0);
+    }
+}
+
+@keyframes flash-grn {
+    0% {
+        background-color: #3c384d;
+    }
+    100% {
+				background-color: #F86161;
+        transform: rotateX(360deg);
+    }
+}
+
+@keyframes flash-pnk {
+    0% {
+        background-color: #00Bfff;
+    }
+    100% {
+        background-color: #ff00Bf ;
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes blink {
+    0% {
+        background: red;
+        box-shadow: 0 0 10px 3px red;
+    }
+    100% {
+        background-color: #FFF;
+    }
+}
