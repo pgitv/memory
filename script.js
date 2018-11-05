@@ -42,7 +42,7 @@ function startNewGame() {
 	timer.style.display = "none";
 	timeStart = false;
 	timer.textContent = minute + " minutes " + second + " seconds";
-	shuffle(card_deck); // use given shuffle function on card_deck
+	shuffle(card_deck);
 	cards_open = [];
 	matches = 0;
 	moves.textContent = 0;
@@ -97,7 +97,7 @@ function addMove(card) {
 function gameOver() {
 	if (matches === 8) {
 		modal.style.display = "block";
-		modalText.textContent = "Congratulations! You made it in " + minute + " minutes and " + second + " seconds!\nAll in all, you completed the game within " + numberOfMoves + " moves and earned " + numberOfStars + " stars!";
+		modalText.textContent = "You finished the game in " + minute + " minutes and " + second + " seconds!\nAll in all, you completed the game within " + numberOfMoves + " moves and earned " + numberOfStars + " stars!";
 		startNewGame();
 	}
 }
@@ -158,11 +158,11 @@ deck.addEventListener("click", function(event) {
 			}
 
 			if (numberOfMoves === 15) {
-				stars.innerHTML = '<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>';
+				stars.innerHTML = '<li><i class="fa fa-heartbeat"></i></li> <li><i class="fa fa-heartbeat"></i></li>';
 				numberOfStars--;
-			//} else if (moves.innerText === 21) {
+			
 			} else if (numberOfMoves === 21) {
-				stars.innerHTML = '<li><i class="fa fa-star"></i></li>';
+				stars.innerHTML = '<li><i class="fa fa-heartbeat"></i></li>';
 				numberOfStars--;
 			}
 		}
