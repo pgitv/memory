@@ -42,7 +42,7 @@ function startNewGame() {
 	timer.style.display = "none";
 	timeStart = false;
 	timer.textContent = minute + " minutes " + second + " seconds";
-	shuffle(card_deck);
+	shuffle(card_deck); 
 	cards_open = [];
 	matches = 0;
 	moves.textContent = 0;
@@ -160,7 +160,7 @@ deck.addEventListener("click", function(event) {
 			if (numberOfMoves === 15) {
 				stars.innerHTML = '<li><i class="fa fa-heartbeat"></i></li> <li><i class="fa fa-heartbeat"></i></li>';
 				numberOfStars--;
-			
+	
 			} else if (numberOfMoves === 21) {
 				stars.innerHTML = '<li><i class="fa fa-heartbeat"></i></li>';
 				numberOfStars--;
