@@ -97,7 +97,7 @@ function addMove(card) {
 function gameOver() {
 	if (matches === 8) {
 		modal.style.display = "block";
-		modalText.textContent = "You finished the game in " + minute + " minutes and " + second + " seconds!\nAll in all, you completed the game within " + numberOfMoves + " moves and earned " + numberOfStars + " stars!";
+		modalText.textContent = "You finished the game in " + minute + " minutes and " + second + " seconds!\nGame completed in " + numberOfMoves + " moves and with " + numberOfStars + " heartbeats!";
 		startNewGame();
 	}
 }
