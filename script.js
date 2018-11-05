@@ -61,7 +61,7 @@ function startNewGame() {
 		icon_element[i].classList.add("fa", card_deck[i]);
 	}
 
-	stars.innerHTML = '<li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li> <li><i class="fa fa-star"></i></li>';
+	stars.innerHTML = '<li><i class="fa fa-heartbeat"></i></li> <li><i class="fa fa-heartbeat"></i></li> <li><i class="fa fa-heartbeat"></i></li>';
 	numberOfStars = 3;
 }
 
